@@ -28,3 +28,15 @@ The election audit script ran successfully, and our results are summarized below
 
 
 ## Election-Audit Summary
+
+This script can currently be used for any election in which the results are saved in a csv file with headers for BallotID, County, and Candidate. The following block of code limits the script to csv files in that format.
+```
+        # Get the candidate name from each row.
+        candidate_name = row[2]
+
+        # 3: Extract the county name from each row.
+        county_name = row[1]
+```
+To allow more flexibility we could use a for loop to go through each row list and create a list and dictionary for each unique option, just as we hard coded for the candidate and county. The csv file would still need to have the ballot ID first so that we don't count votes by that, but otherwise it should allow the script to be used for more elections. 
+
+Another change that would be helpful would be to allow the user to choose what input and output file they would like to use, that way they don't have to go into the script and change it by hand for each different election.
